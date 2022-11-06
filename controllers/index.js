@@ -32,6 +32,34 @@ export class AppControllers {
     }
   }
 
+  static async fetchLocalGovtOfAState(req, res) {
+    try {
+      const { stateId } = req.query;
+      if (!stateId) {
+        return ServerResponses.badRequest(
+          req,
+          res,
+          RESPONSE_CODES.BAD_REQUEST,
+          "stateId query param is required"
+        );
+      }
+      const dbRes = await AppServices.fetchAllLocalGovtOfAState(stateId);
+      return ServerResponses.successOk(
+        res,
+        RESPONSE_CODES.SUCCESS,
+        "data successfully fetched",
+        dbRes.rows
+      );
+    } catch (error) {
+      return ServerResponses.serverError(
+        req,
+        res,
+        RESPONSE_CODES.UNKNOWN_ERROR,
+        error.message
+      );
+    }
+  }
+
   static async fetchAllPollingUnits(req, res) {
     try {
       const dbRes = await AppServices.fetchAllPollingUnits();

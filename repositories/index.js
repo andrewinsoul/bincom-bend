@@ -9,6 +9,10 @@ export class AppRepository {
     return SQLMAPPING.FETCH_ALL_STATES();
   }
 
+  static fetchAllLocalGovtOfAState(stateId) {
+    return SQLMAPPING.FETCH_ALL_LOCAL_GOVT_OF_A_STATE(stateId);
+  }
+
   static fetchAllPollingUnits() {
     return SQLMAPPING.FETCH_ALL_POLLING_UNITS;
   }

@@ -25,8 +25,8 @@ app.use(urlencoded({ limit: "50mb", extended: true }));
 // load all routes
 app.use(appRouter);
 
-server.listen(PORT);
+server.listen(PORT || 9000);
 
-logger.info(`Running on ${PORT}`);
+logger.info(`Running on port: ${PORT || 9000}`);
 
 export default app;

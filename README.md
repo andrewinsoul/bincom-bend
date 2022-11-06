@@ -34,6 +34,13 @@
 
   <tr>
     <td>GET</td>
+    <td>/api/v1/fetch/all/lga?stateId=STATE_ID</td>
+    <td>Get all local government area of a state</td>
+    <td>N/A</td>
+  </tr>
+
+  <tr>
+    <td>GET</td>
     <td>/api/v1/fetch/all/pollingUnit/</td>
     <td>Get all polling units</td>
     <td>N/A</td>
@@ -77,7 +84,7 @@
 
 ## Deployment
 
-This app was deployed to Heroku and can be accessed from <a href="https://okra2.herokuapp.com/v1/ping">HERE</a> ✨✨✨✨✨✨
+This app was deployed to Heroku and can be accessed from <a href="https://bincom-bend.herokuapp.com/api/v1">HERE</a> ✨✨✨✨✨✨
 
 ## Stay in touch
 

@@ -31,6 +31,10 @@ v1Router
     AppControllers.fetchAllStates
   )
   .get(
+    `${VERSION_URL.V1.prefix}/fetch/all/lga`,
+    AppControllers.fetchLocalGovtOfAState
+  )
+  .get(
     `${VERSION_URL.V1.prefix}/fetch/sum/total/pollingUnit`,
     AppControllers.fetchSummedTotalOfPollingUnitUnderLga
   )

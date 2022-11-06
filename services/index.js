@@ -46,6 +46,17 @@ export class AppServices extends BaseService {
     }
   }
 
+  static async fetchAllLocalGovtOfAState(stateId) {
+    try {
+      const sql = AppRepository.fetchAllLocalGovtOfAState(stateId);
+      const res = await config.query(sql);
+      return res;
+    } catch (err) {
+      new BaseService().loggerUtil.error(err.message);
+      throw err;
+    }
+  }
+
   static async fetchTotalResultOfUnitUnderLga(lgaId) {
     try {
       const sql = AppRepository.fetchTotalResultOfUnitUnderLga(lgaId);
